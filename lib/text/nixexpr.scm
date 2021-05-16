@@ -10,3 +10,9 @@
 ;; Double-quote string
 (define-method nix:expr ((s <string>))
   #"\"~s\"")
+
+;; Numbers (integer or floating point)
+(define-method nix:expr ((n <integer>))
+  (number->string n))
+(define-method nix:expr ((n <real>))
+  (number->string n))

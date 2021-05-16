@@ -23,4 +23,16 @@ single-quote
        "\"https://url.should.be/quoted/\""
        (nix:expr "https://url.should.be/quoted/"))
 
+(test* "integer"
+       "1"
+       (nix:expr 1))
+
+(test* "floating point"
+       "1.4"
+       (nix:expr 1.4))
+
+(test* "floating point in scientific notation"
+       "1.4e-10"
+       (nix:expr 1.4e-10))
+
 (test-end)
