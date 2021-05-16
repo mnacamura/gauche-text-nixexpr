@@ -13,6 +13,6 @@
 
 ;; Numbers (integer or floating point)
 (define-method nix:expr ((n <integer>))
-  (number->string n))
+  (format #f "~d" n))
 (define-method nix:expr ((n <real>))
-  (number->string n))
+  (format #f "~f" n))

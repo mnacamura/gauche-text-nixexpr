@@ -27,6 +27,10 @@ single-quote
        "1"
        (nix:expr 1))
 
+(test* "integer in Gauche specific notation"
+       "10"
+       (nix:expr #e1_0))
+
 (test* "floating point"
        "1.4"
        (nix:expr 1.4))
@@ -34,5 +38,13 @@ single-quote
 (test* "floating point in scientific notation"
        "1.4e-10"
        (nix:expr 1.4e-10))
+
+(test* "exact real number"
+       "0.5"
+       (nix:expr 1/2))
+
+(test* "real number in Gauche specific notation"
+       "0.105"
+       (nix:expr #i1.0_5))
 
 (test-end)
